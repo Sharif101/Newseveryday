@@ -38,30 +38,29 @@ let displayNews =(data)=>{
                 <img src="${datas.thumbnail_url}" class="img-fluid rounded-start" alt="...">
                 </div>
                     <div class="col-md-10">
-                    <div class="card-body pt-3">
-                        <h5 class="card-title" style="color: #FF6F3F;">${datas.title}</h5>
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: #00000;">${datas.title}</h5>
                         <p class="card-text pt-2">${datas.details}</p>
-                        
-                             <div class="author mt-3">
-                                <div class="profile d-flex align-items-center">
-                                   <div class="img ps-3"> 
-                                        <img class="img-fluid" src="${datas.author.img}" alt="">
-                                   </div>
-                                    <p class="px-3">${datas.author.name ? datas.author.name: 'no author found'}</p>
-                                </div>
-                                <div class="view">
-                                    <p></p>
-                                </div>
-                                <div class="icon">
-                                    
-                                </div>
+                        <div class="d-flex author justify-content-between align-items-center mt-3">
+                        <div class="profile d-flex align-items-center">
+                        <div class="img ps-3"> 
+                                <img class="img-fluid" src="${datas.author.img}" alt="">
+                        </div>
+                            <div class="text px-3">
+                                <p style="color: #FF6F3F;">${datas.author.name ? datas.author.name: 'no author found'}</p>
+                                <p>${datas.author.published_date ? datas.author.published_date: 'no date found'}</p>
                             </div>
+                        </div>
+                        <div><p>${datas.total_view ? datas.total_view: 'no view'}</p></div>
+                        <div><p><a href="#"><i class="fa-solid fa-arrow-right"></i></a></p></div>
+                    </div>
                     </div>
                 </div>  
+                
         `;
         new_box.appendChild(newDiv);
     }
 }
 
 loadData();
-loadNews();
+// loadNews();

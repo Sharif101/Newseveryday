@@ -41,10 +41,14 @@ body,html{
 
 .author .profile .img
 {
-    width: 5%;
+    width: 20%;
 }
 
 .author .profile .img img
 {
     border-radius: 20px;
+}
+.profile
+{
+    width: 30%;
 }
