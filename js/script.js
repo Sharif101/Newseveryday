@@ -7,7 +7,8 @@ function loadData(){
 }
 
 let displayNewsTitle = (news) =>{
-    let title = document.getElementById('title');
+    try{
+        let title = document.getElementById('title');
     for(let newes of news){
         // console.log(newes);
       let li = document.createElement('li');
@@ -15,6 +16,11 @@ let displayNewsTitle = (news) =>{
       <a href="#" onclick="loadNews('${newes.category_id}')">${newes.category_name}</a>
       `;
       title.appendChild(li);
+    }
+    togggle(true);
+    }
+    catch{
+        console.log('error');
     }
 }
 
@@ -29,6 +35,14 @@ let loadNews = (category_id) =>
 let displayNews =(data)=>{
     let new_box =document.getElementById('new_box');
     new_box.innerHTML = '';
+    let total_news = document.getElementById('news_found');
+    if(data.length>0){
+        total_news.innerText = data.length + ' Items Found'
+    }
+    else
+    {
+        total_news.innerText = 'No Item Found'
+    }
     for(let datas of data){
         // console.log(datas);
         let newDiv = document.createElement('div');
@@ -40,7 +54,7 @@ let displayNews =(data)=>{
                     <div class="col-md-10">
                     <div class="card-body">
                         <h5 class="card-title" style="color: #00000;">${datas.title}</h5>
-                        <p class="card-text pt-2">${datas.details}</p>
+                        <p class="card-text pt-2">${datas.details.slice(1,250) + '...'}</p>
                         <div class="d-flex author justify-content-between align-items-center mt-3">
                         <div class="profile d-flex align-items-center">
                         <div class="img ps-3"> 
@@ -60,6 +74,7 @@ let displayNews =(data)=>{
         `;
         new_box.appendChild(newDiv);
     }
+    togggle(false);
 }
 
 
@@ -79,6 +94,20 @@ let displayModaldata = (id) =>{
 }
 
 
+
+let togggle = (isloading) =>
+{
+    let loder = document.getElementById('lodder');
+    if(isloading){
+        loder.classList.remove('d-none');
+    }
+    else
+    {
+        loder.classList.add('d-none')
+    }
+}
+
 loadData();
 // loadNews();
 // modalData();
+

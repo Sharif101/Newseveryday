@@ -52,3 +52,24 @@ body,html{
 {
     width: 30%;
 }
+
+#total_news
+{
+    margin-bottom: 30px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    background: #faffff;
+    -webkit-box-shadow: 12px 12px 33px #a0a3a3, -12px -12px 33px #ffffff;
+    box-shadow: 12px 12px 33px #a0a3a3, -12px -12px 33px #ffffff;
+    width: 100%;
+    height: 50px;
+    margin-top: 50px;
+    padding: 10px;
+}
+
+#total_news p
+{
+    font-size: 22px;
+    font-weight: 600;
+    color: #FF6F3F;
+}
