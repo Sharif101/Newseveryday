@@ -22,3 +22,19 @@ ol,ul
 body,html{
     overflow-x: hidden;
 }
+
+
+#new_box
+{
+    margin-top: 50px;
+}
+.row
+{
+    margin-bottom: 30px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    background: #faffff;
+    -webkit-box-shadow: 12px 12px 33px #a0a3a3, -12px -12px 33px #ffffff;
+    box-shadow: 12px 12px 33px #a0a3a3, -12px -12px 33px #ffffff;
+    padding: 20px;
+}
