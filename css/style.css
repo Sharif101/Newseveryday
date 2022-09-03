@@ -39,9 +39,11 @@ body,html{
     padding: 20px;
 }
 
+
 .author .profile .img
 {
     width: 20%;
+    padding-right: 10px;
 }
 
 .author .profile .img img
@@ -51,6 +53,9 @@ body,html{
 .profile
 {
     width: 30%;
+}
+.author .text p{
+    font-size: 15px;
 }
 
 #total_news
@@ -72,4 +77,54 @@ body,html{
     font-size: 22px;
     font-weight: 600;
     color: #FF6F3F;
+}
+
+.news_title ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+/* ------------------------------ */
+/* responsive */
+@media screen and (max-width:576px) {
+
+    nav ul {
+        text-align: center;
+        margin: 10px 0;
+    }
+    .news_title ul
+    {
+        display: block;
+        text-align: center;
+    }
+    .news_title ul li
+    {
+        margin: 7px 0;
+    }
+    
+   
+    /* .row .img
+    {
+        width: 100% !important;
+    } */
+
+    .author .profile .img
+    {
+        width: 25%;
+    }
+
+    .profile
+    {
+        width: 78%;
+    }
+    .author .text p{
+        font-size: 12px;
+    }
+
+
 }

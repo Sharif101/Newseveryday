@@ -1,9 +1,14 @@
 
 function loadData(){
     let url = `https://openapi.programming-hero.com/api/news/categories`
-    fetch(url)
+    try{
+        fetch(url)
     .then(res => res.json())
     .then(res =>displayNewsTitle(res.data.news_category))
+    }
+    catch(error){
+        console.log('error');
+    }
 }
 
 let displayNewsTitle = (news) =>{
@@ -19,7 +24,7 @@ let displayNewsTitle = (news) =>{
     }
     togggle(true);
     }
-    catch{
+    catch(error){
         console.log('error');
     }
 }
@@ -27,9 +32,15 @@ let displayNewsTitle = (news) =>{
 let loadNews = (category_id) =>
 {
     let url = ` https://openapi.programming-hero.com/api/news/category/${category_id}`
-    fetch(url)
+    try{
+        fetch(url)
     .then(res => res.json())
     .then(res => displayNews(res.data))
+    }
+    catch(error)
+    {
+        console.log('error');
+    }
 }
 
 let displayNews =(data)=>{
@@ -53,14 +64,14 @@ let displayNews =(data)=>{
                 </div>
                     <div class="col-md-10">
                     <div class="card-body">
-                        <h5 class="card-title" style="color: #00000;">${datas.title}</h5>
-                        <p class="card-text pt-2">${datas.details.slice(1,250) + '...'}</p>
+                        <h5 class="card-title" style="font-weight: 600;" style="color: #00000;">${datas.title}</h5>
+                        <p class="card-text pt-2">${datas.details.slice(1,200) + '...'}</p>
                         <div class="d-flex author justify-content-between align-items-center mt-3">
                         <div class="profile d-flex align-items-center">
                         <div class="img ps-3"> 
                                 <img class="img-fluid" src="${datas.author.img}" alt="">
                         </div>
-                            <div class="text px-3">
+                            <div class="text">
                                 <p style="color: #FF6F3F;">${datas.author.name ? datas.author.name: 'no author found'}</p>
                                 <p>${datas.author.published_date ? datas.author.published_date: 'no date found'}</p>
                             </div>
@@ -81,9 +92,14 @@ let displayNews =(data)=>{
 // modal data load 
 let modalData =(_id)=>{
     let url = `https://openapi.programming-hero.com/api/news/${_id}`
-    fetch(url)
+    try{
+        fetch(url)
     .then(res => res.json())
     .then(res => displayModaldata(res.data[0]))
+    }
+    catch(error){
+        console.log('error');
+    }
 }
 
 let displayModaldata = (id) =>{
@@ -106,6 +122,8 @@ let togggle = (isloading) =>
         loder.classList.add('d-none')
     }
 }
+
+
 
 loadData();
 // loadNews();
