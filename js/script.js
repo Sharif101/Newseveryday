@@ -30,7 +30,7 @@ let displayNews =(data)=>{
     let new_box =document.getElementById('new_box');
     new_box.innerHTML = '';
     for(let datas of data){
-        console.log(datas);
+        // console.log(datas);
         let newDiv = document.createElement('div');
         newDiv.classList.add('row');
         newDiv.innerHTML = `
@@ -52,7 +52,7 @@ let displayNews =(data)=>{
                             </div>
                         </div>
                         <div><p>${datas.total_view ? datas.total_view: 'no view'}</p></div>
-                        <div><p><a href="#"><i class="fa-solid fa-arrow-right"></i></a></p></div>
+                        <div><p><a onclick="modalData('${datas._id}')" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-arrow-right"></i></a></p></div>
                     </div>
                     </div>
                 </div>  
@@ -62,5 +62,23 @@ let displayNews =(data)=>{
     }
 }
 
+
+// modal data load 
+let modalData =(_id)=>{
+    let url = `https://openapi.programming-hero.com/api/news/${_id}`
+    fetch(url)
+    .then(res => res.json())
+    .then(res => displayModaldata(res.data[0]))
+}
+
+let displayModaldata = (id) =>{
+    let modalTitle = document.getElementById('exampleModalLabel');
+    modalTitle.innerText = id.title;
+    let modalBody = document.getElementById('m_body');
+    modalBody.innerText = id.details;
+}
+
+
 loadData();
 // loadNews();
+// modalData();
