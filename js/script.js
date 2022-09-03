@@ -37,13 +37,27 @@ let displayNews =(data)=>{
                 <div class="col-md-2 img">
                 <img src="${datas.thumbnail_url}" class="img-fluid rounded-start" alt="...">
                 </div>
-                <div class="col-md-10">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-                </div>
+                    <div class="col-md-10">
+                    <div class="card-body pt-3">
+                        <h5 class="card-title" style="color: #FF6F3F;">${datas.title}</h5>
+                        <p class="card-text pt-2">${datas.details}</p>
+                        
+                             <div class="author mt-3">
+                                <div class="profile d-flex align-items-center">
+                                   <div class="img ps-3"> 
+                                        <img class="img-fluid" src="${datas.author.img}" alt="">
+                                   </div>
+                                    <p class="px-3">${datas.author.name ? datas.author.name: 'no author found'}</p>
+                                </div>
+                                <div class="view">
+                                    <p></p>
+                                </div>
+                                <div class="icon">
+                                    
+                                </div>
+                            </div>
+                    </div>
+                </div>  
         `;
         new_box.appendChild(newDiv);
     }

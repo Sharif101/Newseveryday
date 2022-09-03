@@ -38,3 +38,13 @@ body,html{
     box-shadow: 12px 12px 33px #a0a3a3, -12px -12px 33px #ffffff;
     padding: 20px;
 }
+
+.author .profile .img
+{
+    width: 5%;
+}
+
+.author .profile .img img
+{
+    border-radius: 20px;
+}
