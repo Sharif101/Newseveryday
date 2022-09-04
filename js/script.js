@@ -43,6 +43,12 @@ let loadNews = (category_id) =>
     }
 }
 
+function compare(a, b){ 
+    if(a.total_view < b.total_view)return 1; 
+    else if(a.total_view > b.total_view)return -1; 
+    else return 0; 
+}
+
 let displayNews =(data)=>{
     let new_box =document.getElementById('new_box');
     new_box.innerHTML = '';
@@ -54,6 +60,7 @@ let displayNews =(data)=>{
     {
         total_news.innerText = 'No Item Found'
     }
+    data.sort(compare);
     for(let datas of data){
         // console.log(datas);
         let newDiv = document.createElement('div');
@@ -126,6 +133,6 @@ let togggle = (isloading) =>
 
 
 loadData();
-// loadNews();
+loadNews('08');
 // modalData();
 

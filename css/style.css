@@ -107,11 +107,18 @@ body,html{
         margin: 7px 0;
     }
     
-   
+    .row .img img {
+        width: 100%;
+    }
     /* .row .img
     {
         width: 100% !important;
     } */
+
+    .card-title
+    {
+        margin: 10px 0;
+    }
 
     .author .profile .img
     {
